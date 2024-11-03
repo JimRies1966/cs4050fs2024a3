@@ -13,6 +13,10 @@ LDFLAGS = -lm -lcs4050 -L.
 
 default: testcc test
 
+# Other targets
+debug: CFLAGS += -DDEBUG
+debug: clean testcc test
+
 %.o : %.c 
 	@echo Compiling $^ 
 	@$(CC) $(CFLAGS) $^
